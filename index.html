@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VisionPrinters Trading Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 text-white">
+
+  <!-- Top Navbar -->
+  <div class="flex items-center justify-between p-4 bg-gray-800">
+    <div class="text-2xl font-bold">VisionPrinters</div>
+    <div class="space-x-3">
+      <a href="https://app.deriv.com/cashier" target="_blank" class="px-3 py-2 bg-blue-600 rounded">Deposit</a>
+      <a href="https://app.deriv.com/cashier" target="_blank" class="px-3 py-2 bg-green-600 rounded">Withdraw</a>
+      <a href="https://ke-com-1.onrender.com/login" class="px-3 py-2 bg-gray-700 rounded">Log In</a>
+      <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank" class="px-3 py-2 bg-purple-600 rounded">📲 Telegram</a>
+    </div>
+  </div>
+
+  <!-- Tabs Menu -->
+  <div class="flex space-x-4 p-3 bg-gray-800">
+    <button onclick="showTab('dashboard')" class="tab-btn font-semibold">Dashboard</button>
+    <button onclick="showTab('bot')" class="tab-btn font-semibold">Bot Builder</button>
+    <button onclick="openDTrader()" class="font-semibold">DTrader</button>
+    <button onclick="showTab('tutorial')" class="tab-btn font-semibold">Tutorial</button>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="h-[80vh] overflow-hidden">
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="tab-content p-5">
+      <h2 class="text-xl mb-3 font-bold">Welcome to VisionPrinters Dashboard</h2>
+      <div class="space-x-3">
+        <a href="https://track.deriv.com/_BdWWYCtdLopZl7VyVw174GNd7ZgqdRLk/1/" target="_blank" class="p-3 bg-yellow-500 rounded">Register on Deriv</a>
+        <button class="p-3 bg-gray-700 rounded">Load from Local</button>
+        <button class="p-3 bg-gray-700 rounded">Load from Google Drive</button>
+        <button class="p-3 bg-gray-700 rounded">Quick Strategy</button>
+      </div>
+    </div>
+
+    <!-- Bot Builder -->
+    <div id="bot" class="tab-content hidden">
+      <iframe src="https://app.deriv.com/bot" class="w-full h-[75vh]" frameborder="0"></iframe>
+    </div>
+
+    <!-- Tutorial -->
+    <div id="tutorial" class="tab-content hidden p-5">
+      <h2 class="text-xl mb-3 font-bold">Getting Started Tutorial</h2>
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+  <!-- Bottom Status Bar -->
+  <div id="status-bar" class="fixed bottom-0 left-0 right-0 p-3 bg-gray-800 hidden flex items-center justify-between">
+    <span>⚪ Bot is not running</span>
+    <button class="px-4 py-2 bg-green-600 rounded">Run</button>
+    <span class="text-sm">Trade responsibly | VisionPrinters ©2025</span>
+  </div>
+
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.tab-content').forEach(e => e.classList.add('hidden'));
+      document.getElementById(tab).classList.remove('hidden');
+
+      if (tab === 'bot') {
+        document.getElementById('status-bar').classList.remove('hidden');
+      } else {
+        document.getElementById('status-bar').classList.add('hidden');
+      }
+    }
+
+    function openDTrader() {
+      window.open('https://app.deriv.com/trading', '_blank');
+    }
+  </script>
+
+</body>
+</html>
