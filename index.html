@@ -1,96 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VisionPrinters Hub</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>VisionPrinters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
 </head>
+<body>
 
-<body class="bg-black text-white font-sans">
+  <div class="container">
 
-  <!-- Top Navbar -->
-  <div class="flex items-center justify-between p-3 bg-gray-900 border-b border-gray-800">
-    <div class="text-3xl font-extrabold text-white">X</div>
-    <div class="space-x-3">
-      <a href="https://app.deriv.com/cashier" target="_blank" class="px-3 py-2 bg-blue-600 rounded text-sm">Deposit</a>
-      <a href="https://app.deriv.com/cashier" target="_blank" class="px-3 py-2 bg-green-600 rounded text-sm">Withdraw</a>
-      <a href="https://ke-com-1.onrender.com/login" class="px-3 py-2 bg-gray-700 rounded text-sm">Log In</a>
-      <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank" class="px-3 py-2 bg-purple-600 rounded text-sm">📲 Telegram</a>
+    <h1 class="logo">VISION<span>PRINTERS</span></h1>
+
+    <div class="btn-group">
+      <a href="https://ke-com.onrender.com/login" class="login-btn">Login with Deriv</a>
+      <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank" class="telegram-btn">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+      </a>
     </div>
+
+    <p class="risk-warning">
+      ⚠️ Risk Warning: Trading financial assets involves significant risk. You may lose your invested capital. Use VisionPrinters responsibly.
+    </p>
+
+    <div class="quick-links">
+      <a href="#" class="quick-link">Quick Bot</a>
+      <a href="#" class="quick-link">Bot Builder</a>
+      <a href="#" class="quick-link">DTrader</a>
+      <a href="#" class="quick-link">Analysis Tool</a>
+    </div>
+
+    <div class="quick-links">
+      <a href="https://app.deriv.com/cashier/deposit" target="_blank" class="quick-link">Deposit</a>
+      <a href="https://app.deriv.com/cashier/withdrawal" target="_blank" class="quick-link">Withdraw</a>
+    </div>
+
+    <div class="iframe-wrap">
+      <iframe src="https://widgets.deriv.com/price-chart-widget/" frameborder="0" scrolling="no"></iframe>
+    </div>
+
   </div>
-
-  <div class="flex h-[calc(100vh-48px)]">
-
-    <!-- Sidebar -->
-    <div class="w-40 bg-gray-900 border-r border-gray-800 flex flex-col space-y-2 p-4">
-      <button onclick="showTab('dashboard')" class="px-3 py-2 bg-gray-800 rounded text-sm">Dashboard</button>
-      <button onclick="showTab('bot')" class="px-3 py-2 bg-gray-800 rounded text-sm">Bot</button>
-      <button onclick="showTab('livecharts')" class="px-3 py-2 bg-gray-800 rounded text-sm">Live Charts</button>
-      <button onclick="showTab('tutorial')" class="px-3 py-2 bg-gray-800 rounded text-sm">Tutorial</button>
-    </div>
-
-    <!-- Main Content Area -->
-    <div class="flex-1 flex flex-col">
-
-      <!-- Risk Disclaimer -->
-      <div class="p-2 bg-red-700 text-center text-xs">
-        ⚠️ Trading financial derivatives carries high risk. Only trade with money you can afford to lose.
-      </div>
-
-      <!-- Main Tabs -->
-      <div id="main-content" class="flex-1 overflow-hidden">
-
-        <!-- Dashboard -->
-        <div id="dashboard" class="tab-content p-5">
-          <div class="space-x-3">
-            <a href="https://track.deriv.com/_BdWWYCtdLopZl7VyVw174GNd7ZgqdRLk/1/" target="_blank" class="p-3 bg-yellow-500 rounded text-black text-sm">Register on Deriv</a>
-            <button class="p-3 bg-gray-800 rounded text-sm">Load from Local</button>
-            <button class="p-3 bg-gray-800 rounded text-sm">Load from Drive</button>
-            <button class="p-3 bg-gray-800 rounded text-sm">Quick Strategy</button>
-          </div>
-        </div>
-
-        <!-- Bot -->
-        <div id="bot" class="tab-content hidden">
-          <iframe src="https://app.deriv.com/bot" class="w-full h-[calc(100vh-128px)]" frameborder="0"></iframe>
-        </div>
-
-        <!-- Live Charts -->
-        <div id="livecharts" class="tab-content hidden">
-          <iframe src="https://app.deriv.com/trading" class="w-full h-[calc(100vh-128px)]" frameborder="0"></iframe>
-        </div>
-
-        <!-- Tutorial -->
-        <div id="tutorial" class="tab-content hidden p-5">
-          <h2 class="text-lg mb-3 font-semibold">Getting Started Video</h2>
-          <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-        </div>
-
-      </div>
-
-      <!-- Status Bar -->
-      <div id="status-bar" class="hidden p-2 bg-gray-900 flex items-center justify-between border-t border-gray-800 text-xs">
-        <span>⚪ Bot is not running</span>
-        <button class="px-3 py-1 bg-green-600 rounded text-xs">Run</button>
-        <span>Trade responsibly | 2025</span>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    function showTab(tab) {
-      document.querySelectorAll('.tab-content').forEach(e => e.classList.add('hidden'));
-      document.getElementById(tab).classList.remove('hidden');
-
-      if (tab === 'bot') {
-        document.getElementById('status-bar').classList.remove('hidden');
-      } else {
-        document.getElementById('status-bar').classList.add('hidden');
-      }
-    }
-  </script>
 
 </body>
-              </html>
+</html>
