@@ -3,29 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VisionPrinters Trading Hub</title>
+  <title>Trading Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-900 text-white">
+<body class="bg-black text-white font-sans">
 
   <!-- Top Navbar -->
-  <div class="flex items-center justify-between p-4 bg-gray-800">
-    <div class="text-2xl font-bold">VisionPrinters</div>
+  <div class="flex items-center justify-between p-3 bg-gray-900 border-b border-gray-800">
+    <div class="text-3xl font-extrabold text-white">X</div>
     <div class="space-x-3">
-      <a href="https://app.deriv.com/cashier" target="_blank" class="px-3 py-2 bg-blue-600 rounded">Deposit</a>
-      <a href="https://app.deriv.com/cashier" target="_blank" class="px-3 py-2 bg-green-600 rounded">Withdraw</a>
-      <a href="https://ke-com-1.onrender.com/login" class="px-3 py-2 bg-gray-700 rounded">Log In</a>
-      <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank" class="px-3 py-2 bg-purple-600 rounded">📲 Telegram</a>
+      <a href="https://app.deriv.com/cashier" target="_blank" class="px-3 py-2 bg-blue-600 rounded text-sm">Deposit</a>
+      <a href="https://app.deriv.com/cashier" target="_blank" class="px-3 py-2 bg-green-600 rounded text-sm">Withdraw</a>
+      <a href="https://ke-com-1.onrender.com/login" class="px-3 py-2 bg-gray-700 rounded text-sm">Log In</a>
+      <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank" class="px-3 py-2 bg-purple-600 rounded text-sm">📲 Telegram</a>
     </div>
   </div>
 
   <!-- Tabs Menu -->
-  <div class="flex space-x-4 p-3 bg-gray-800">
-    <button onclick="showTab('dashboard')" class="tab-btn font-semibold">Dashboard</button>
-    <button onclick="showTab('bot')" class="tab-btn font-semibold">Bot Builder</button>
-    <button onclick="openDTrader()" class="font-semibold">DTrader</button>
-    <button onclick="showTab('tutorial')" class="tab-btn font-semibold">Tutorial</button>
+  <div class="flex space-x-4 p-3 bg-gray-900">
+    <button onclick="showTab('dashboard')" class="tab-btn text-sm font-semibold">Dashboard</button>
+    <button onclick="showTab('bot')" class="tab-btn text-sm font-semibold">Bot</button>
+    <button onclick="openDTrader()" class="text-sm font-semibold">DTrader</button>
+    <button onclick="showTab('tutorial')" class="tab-btn text-sm font-semibold">Tutorial</button>
+  </div>
+
+  <!-- Risk Disclaimer -->
+  <div class="p-2 bg-red-700 text-center text-xs">
+    ⚠️ Trading financial derivatives carries high risk. Only trade with money you can afford to lose.
   </div>
 
   <!-- Main Content -->
@@ -33,33 +38,32 @@
 
     <!-- Dashboard -->
     <div id="dashboard" class="tab-content p-5">
-      <h2 class="text-xl mb-3 font-bold">Welcome to VisionPrinters Dashboard</h2>
       <div class="space-x-3">
-        <a href="https://track.deriv.com/_BdWWYCtdLopZl7VyVw174GNd7ZgqdRLk/1/" target="_blank" class="p-3 bg-yellow-500 rounded">Register on Deriv</a>
-        <button class="p-3 bg-gray-700 rounded">Load from Local</button>
-        <button class="p-3 bg-gray-700 rounded">Load from Google Drive</button>
-        <button class="p-3 bg-gray-700 rounded">Quick Strategy</button>
+        <a href="https://track.deriv.com/_BdWWYCtdLopZl7VyVw174GNd7ZgqdRLk/1/" target="_blank" class="p-3 bg-yellow-500 rounded text-black text-sm">Register on Deriv</a>
+        <button class="p-3 bg-gray-800 rounded text-sm">Load from Local</button>
+        <button class="p-3 bg-gray-800 rounded text-sm">Load from Drive</button>
+        <button class="p-3 bg-gray-800 rounded text-sm">Quick Strategy</button>
       </div>
     </div>
 
-    <!-- Bot Builder -->
+    <!-- Bot -->
     <div id="bot" class="tab-content hidden">
       <iframe src="https://app.deriv.com/bot" class="w-full h-[75vh]" frameborder="0"></iframe>
     </div>
 
     <!-- Tutorial -->
     <div id="tutorial" class="tab-content hidden p-5">
-      <h2 class="text-xl mb-3 font-bold">Getting Started Tutorial</h2>
+      <h2 class="text-lg mb-3 font-semibold">Getting Started Video</h2>
       <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
     </div>
 
   </div>
 
-  <!-- Bottom Status Bar -->
-  <div id="status-bar" class="fixed bottom-0 left-0 right-0 p-3 bg-gray-800 hidden flex items-center justify-between">
+  <!-- Status Bar -->
+  <div id="status-bar" class="fixed bottom-0 left-0 right-0 p-2 bg-gray-900 hidden flex items-center justify-between border-t border-gray-800 text-xs">
     <span>⚪ Bot is not running</span>
-    <button class="px-4 py-2 bg-green-600 rounded">Run</button>
-    <span class="text-sm">Trade responsibly | VisionPrinters ©2025</span>
+    <button class="px-3 py-1 bg-green-600 rounded text-xs">Run</button>
+    <span>Trade responsibly | 2025</span>
   </div>
 
   <script>
@@ -80,4 +84,4 @@
   </script>
 
 </body>
-</html>
+          </html>
