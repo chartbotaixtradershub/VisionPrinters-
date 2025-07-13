@@ -1,0 +1,139 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VisionPrinters Dashboard</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0f19;
+    color: #fff;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .sidebar {
+    width: 220px;
+    background: #111827;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  .sidebar button {
+    background: #1f2937;
+    border: none;
+    color: #fff;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .sidebar button:hover {
+    background: #22c55e;
+  }
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f2937;
+    padding: 10px 20px;
+  }
+  .topbar a img {
+    width: 26px;
+  }
+  .topbar button {
+    background: #22c55e;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .banner {
+    padding: 8px 16px;
+    background: #dc2626;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .content {
+    flex: 1;
+    overflow-y: auto;
+  }
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .copy-trading {
+    padding: 20px;
+  }
+  .copy-trading button, .copy-trading input {
+    margin: 5px 0;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+  }
+  .risk {
+    font-size: 12px;
+    color: #9ca3af;
+    padding: 15px;
+    text-align: center;
+  }
+</style>
+</head>
+<body><div class="sidebar">
+  <button onclick="loadContent('dashboard')">Dashboard</button>
+  <button onclick="loadIframe('https://app.deriv.com/bot')">Bot Builder</button>
+  <button onclick="loadIframe('https://app.deriv.com/trader')">DTrader</button>
+  <button onclick="loadIframe('https://www.youtube.com/embed/videoseries?list=PL14bZQ2q_g7uU8jD4q1x6Nq_T3LL4LpvK')">Tutorials</button>
+  <button onclick="loadIframe('https://app.deriv.com')">Analysis Tool</button>
+  <button onclick="loadIframe('https://app.deriv.com')">DP Tool</button>
+  <button onclick="loadIframe('https://app.deriv.com')">Free Bots</button>
+  <button onclick="loadIframe('https://app.deriv.com')">AI</button>
+  <button onclick="loadContent('copytrading')">Copy Trading</button>
+  <button onclick="loadIframe('https://www.tradingview.com/chart/')">Trading View</button>
+  <button onclick="loadIframe('https://app.deriv.com')">Risk Manager</button>
+</div><div class="main">
+  <div class="topbar">
+    <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"></a>
+    <button onclick="window.location.href='https://ke-com-1.onrender.com/login'">Login</button>
+  </div>
+  <div class="banner">🔥 BREAKING: Free signals + proven strategies with a 90% win rate — only on my Telegram! Join now and level up your trades 🔥</div>  <div class="content" id="mainContent">
+    <iframe src="https://app.deriv.com/trader" id="mainFrame"></iframe>
+  </div>  <div class="risk">⚠️ Trading involves risk. Only trade money you can afford to lose. VisionPrinters does not offer financial advice or guaranteed profits.</div>
+</div><script>
+function loadIframe(url) {
+  document.getElementById('mainContent').innerHTML = `<iframe src="${url}"></iframe>`;
+}
+function loadContent(type) {
+  if(type === 'dashboard') {
+    document.getElementById('mainContent').innerHTML = '<iframe src="https://app.deriv.com/trader"></iframe>';
+  } else if(type === 'copytrading') {
+    document.getElementById('mainContent').innerHTML = `
+      <div class='copy-trading'>
+        <h2>Start Demo to Real Copy Trading</h2>
+        <p>Status: <strong>OFF</strong></p>
+        <input type='text' placeholder='Enter trader auth token'>
+        <button>Add</button> <button>Refresh</button>
+        <p>Total Clients added: 0</p>
+        <button>Start Demo to Real Copy Trading</button>
+        <h3>Summary</h3>
+        <h3>Transactions</h3>
+        <h3>Journal</h3>
+        <p>When you’re ready to trade, hit Run. You’ll be able to track your bot’s performance here.</p>
+        <p>Bot is not running.</p>
+      </div>`
+  }
+}
+</script></body>
+  </html>
