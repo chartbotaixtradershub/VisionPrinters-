@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VisionPrinters Dashboard</title>
+  <style>
+    body {
+      margin: 0; font-family: sans-serif; background: #0b0f19; color: #fff;
+    }
+    .topbar {
+      background: #1f2937; color: #fff; padding: 10px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .topbar-left button, .topbar-right button, .scroll-btns button, .sidebar button {
+      background: #22c55e; border: none; color: #fff; padding: 8px 12px;
+      margin: 4px; border-radius: 5px; cursor: pointer;
+    }
+    .topbar-right button { background: #ef4444; }
+    .sidebar {
+      position: fixed; left: -220px; top: 0; bottom: 0; width: 220px;
+      background: #111827; padding: 12px; display: flex; flex-direction: column;
+      transition: 0.3s;
+    }
+    .sidebar.open { left: 0; }
+    .sidebar a img { width: 26px; margin: 8px 0; }
+    .banner {
+      background: #dc2626; padding: 8px; overflow: hidden; white-space: nowrap;
+    }
+    .banner span {
+      display: inline-block; padding-left: 100%; animation: marquee 15s linear infinite;
+    }
+    @keyframes marquee { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
+    .main { display: flex; flex-direction: column; height: calc(100vh - 84px); }
+    .scroll-btns {
+      display: flex; overflow-x: auto; background: #111827; padding: 6px;
+    }
+    iframe { flex: 1; border: none; width: 100%; }
+    .footer {
+      background: #0f172a; padding: 12px; text-align: center; font-size: 12px;
+      color: #9ca3af; border-top: 1px solid #1e293b;
+    }
+    .footer a { color: #22c55e; text-decoration: none; }
+    .risk {
+      font-size: 11px; text-align: center; padding: 6px; background: #1f2937; color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <button onclick="toggleSidebar()">☰</button>
+    <button onclick="loadIframe('https://cashier.deriv.com/')">Deposit/Withdraw</button>
+    <button onclick="loadIframe('https://app.deriv.com/trader')">DTrader</button>
+    <button onclick="loadIframe('https://app.deriv.com/bot')">Dbot</button>
+    <button onclick="window.open('https://app.deriv.com/bot')">Upload Bot</button>
+  </div>
+  <div class="topbar-right">
+    <button onclick="window.location.href='https://ke-com-1.onrender.com/login'">Login</button>
+    <button onclick="window.open('https://track.deriv.com/_BdWWYCtdLopZl7VyVw174GNd7ZgqdRLk/1/', '_blank')">Sign Up</button>
+  </div>
+</div>
+
+<div class="banner">
+  <span>🔥 FREE signals + 90% win strategies on Telegram — Join now and win consistently 🔥</span>
+</div>
+
+<div class="sidebar" id="sidebar">
+  <button onclick="loadIframe('https://cashier.deriv.com/')">Cashier</button>
+  <button onclick="loadIframe('https://app.deriv.com/account/settings/')">Settings</button>
+  <button onclick="loadIframe('https://app.deriv.com/trading-view')">Trading View</button>
+  <button onclick="loadIframe('https://app.deriv.com')">Market Analysis</button>
+  <button onclick="window.open('https://app.deriv.com/bot')">Upload Bot</button>
+  <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+  </a>
+</div>
+
+<div class="main">
+  <div class="scroll-btns">
+    <button onclick="loadIframe('https://app.deriv.com/trader')">Dashboard</button>
+    <button onclick="loadIframe('https://app.deriv.com/bot')">Bot Builder</button>
+    <button onclick="loadIframe('https://app.deriv.com')">Analysis</button>
+    <button onclick="loadIframe('https://app.deriv.com/trading-view')">Trading View</button>
+    <button onclick="loadIframe('https://app.deriv.com')">Risk Manager</button>
+    <button onclick="window.open('https://app.deriv.com/bot')">Upload Bot</button>
+  </div>
+  <iframe id="mainFrame" src="https://app.deriv.com/trader"></iframe>
+</div>
+
+<div class="footer">
+  🚀 Welcome to VisionPrinters Hub — Trade smart, grow fast. 📩 Join our <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank">Telegram</a>
+</div>
+
+<div class="risk">⚠️ Trading involves risk. Only trade money you can afford to lose.</div>
+
+<script>
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+function loadIframe(url) {
+  document.getElementById('mainFrame').src = url;
+}
+</script>
+
+</body>
+</html>
