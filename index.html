@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VisionPrinters</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>VisionPrinters</h1>
+    <button onclick="startLogin()">Login</button>
+  </header>
+
+  <main>
+    <section class="balance-section">
+      <h2>Balance: <span id="balance">$0.00</span></h2>
+      <p>Account: <span id="account_id">-</span> | Currency: <span id="currency">-</span></p>
+    </section>
+
+    <section class="trades">
+      <h2>Recent Trades</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Profit</th>
+            <th>Status</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="trade-log">
+          <tr><td colspan="5">No trades yet.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <div class="risk">
+      ⚠️ Trading involves risk. Only trade with money you can afford to lose.
+    </div>
+    <div class="footer">
+      🚀 Built with ❤️ by VisionPrinters | 
+      <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank">Join Telegram</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+        </html>
