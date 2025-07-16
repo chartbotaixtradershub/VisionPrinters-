@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VisionPrinters</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/blockly/blockly_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/blocks_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/javascript_compressed.js"></script>
+  <script src="https://unpkg.com/blockly/msg/en.js"></script>
+</head>
+<body>
+  <div id="splash">
+    <div class="splash-content">
+      <h1>🚀 Build trading bot with <span class="brand">VisionPrinters</span></h1>
+    </div>
+  </div>
+
+  <div class="topbar">
+    <h1>VisionPrinters</h1>
+    <button id="loginBtn">Login</button>
+  </div>
+
+  <div id="loading">🔧 Loading Blockly...</div>
+
+  <div id="main">
+    <div id="blocklyDiv" style="height: 500px; width: 100%; display: none;"></div>
+
+    <xml id="toolbox" style="display: none">
+      <category name="Market" colour="#5C81A6">
+        <block type="trade_definition_market"></block>
+        <block type="trade_definition_multiplier"></block>
+      </category>
+      <category name="Trade Type" colour="#5CA65C">
+        <block type="trade_definition_tradeoptions"></block>
+      </category>
+      <category name="Purchase" colour="#A65C81">
+        <block type="purchase"></block>
+      </category>
+      <category name="Logic" colour="#5C68A6">
+        <block type="controls_if"></block>
+        <block type="logic_compare"></block>
+        <block type="logic_operation"></block>
+        <block type="logic_negate"></block>
+        <block type="logic_boolean"></block>
+      </category>
+      <category name="Loops" colour="#5CA6A6">
+        <block type="controls_repeat_ext">
+          <value name="TIMES">
+            <shadow type="math_number">
+              <field name="NUM">10</field>
+            </shadow>
+          </value>
+        </block>
+      </category>
+      <category name="Math" colour="#5C81A6">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+        <block type="math_arithmetic"></block>
+      </category>
+      <category name="Text" colour="#5CA68D">
+        <block type="text"></block>
+        <block type="text_print"></block>
+      </category>
+    </xml>
+
+    <section class="controls">
+      <input type="file" id="xmlUpload" accept=".xml">
+      <button onclick="runBot()">Start Bot</button>
+      <button onclick="stopBot()">Stop Bot</button>
+      <select id="sampleBotSelector">
+        <option value="">📂 Load Sample Bot</option>
+        <option value="rise_fall">Rise/Fall Example</option>
+        <option value="multiplier_bot">Multiplier Example</option>
+      </select>
+    </section>
+
+    <section class="balance-section">
+      <p>Balance: <span id="balance">$0.00</span></p>
+      <p>Account: <span id="accountID">-</span> | Currency: <span id="currency">-</span></p>
+    </section>
+
+    <section class="trades">
+      <h3>Recent Trades</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th><th>Amount</th><th>Profit</th><th>Status</th><th>Time</th>
+          </tr>
+        </thead>
+        <tbody id="tradeLog">
+          <tr><td colspan="5">No trades yet.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <div class="risk">⚠️ Trading involves risk. Only trade with money you can afford to lose.</div>
+  <div class="footer">🚀 Built with ❤️ by VisionPrinters | <a href="https://t.me/+oKXfIOJCUEoxOTI0" target="_blank">Join Telegram</a></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
