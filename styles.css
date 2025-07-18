@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+}
+.splash {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  font-size: 6rem;
+  color: #00ffcc;
+  font-weight: bold;
+  text-shadow: 0 0 20px #00ffcc;
+}
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.init {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #999;
+}
+.bot-ui header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #111;
+}
+.bot-ui h2 {
+  margin: 0;
+}
+.auth-buttons button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #00ffcc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000;
+}
+.prebuilt-bots {
+  padding: 1rem;
+}
+.prebuilt-bots ul {
+  list-style: none;
+  padding: 0;
+}
+.prebuilt-bots li {
+  margin-bottom: 0.5rem;
+}
+.blockly-area {
+  padding: 2rem;
+  background: #1a1a1a;
+  text-align: center;
+}
+footer {
+  padding: 1rem;
+  text-align: center;
+  background: #111;
+  font-size: 0.9rem;
+  color: #aaa;
+}
